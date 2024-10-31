@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coourse Evaluation</title>
+    
+<!--jquery link-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <!--css plugins-->
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/fun.css">
+    <link rel="stylesheet" href="./vendor/bootstrap/css/flex-slider.css">
+    <link rel="stylesheet" href="./vendor/bootstrap/css/animate.css">
+    <link rel="stylesheet" href="./vendor/bootstrap/css/owl.css">
+</head>
+<body>
+  <header>
+    <div class="up-header">
+        <script>
+            const colors = ["#D3D3D3", "#33FF57", "#3357FF", "#F1C40F", "#8E44AD", "#1ABC9C"];
+    let index = 0;
+
+    function changeBackgroundColor() {
+        document.body.style.backgroundColor = colors[index]; 
+        index = (index + 1) % colors.length;
+    }
+
+
+    changeBackgroundColor();
+
+    setInterval(changeBackgroundColor, 70000);
+            </script>
+        <div class="log">
+            <a href="home.html"><h1 class="myh1" style="color: darkgreen; text-decoration: none; margin: 10px; 
+            font-size: larger;">EVAL & <span>RESPONSE</span></h1></a>
+        </div>
+ 
+    <nav class="navbar navbar-expand-sm  " style="margin-left: 8cm; margin-bottom: 0.8cm; cursor: pointer; font-size: 12px;" >
+        <ul class="navbar-nav">
+           <li class="nav-link"><a href="" class="nav-item" style="color: rgb(36, 118, 36); text-decoration: none; " >course</a></li>
+           <li class="nav-link"><a href="" class="nav-link" style="color: rgb(36, 118, 36);text-decoration: none;">discover</a></li>
+           <li class="nav-item"><a href="" class="nav-link" style="color: rgb(36, 118, 36   ); text-decoration: none;">learning</a></li>
+        </ul>
+          
+            </nav>
+    </div>
+  <div class="container">
+    <h1>Saint MARTIN GISENYI Tss</h1>
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="./assets/image/banner1.jpg" alt="Slide 1">
+        </li>
+        <li>
+          <img src="./assets/image/banner2.jpg" alt="Slide 2">
+        </li>
+        <li>
+          <img src="./assets/image/banner3.jpg" alt="Slide 3">
+        </li>
+      </ul>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $('.flexslider').flexslider({
+          animation: "fade",
+          controlNav: true,   
+          directionNav: true, 
+          slideshowSpeed: 4000, 
+          animationSpeed: 600,  
+        });
+      });
+    </script>
+    
+    <P>WELCOME TO ICT ONLINE COURSE EVALUATION SYSTEM</P>
+    <main>
+        <a href="./login.php" id="login">click here</a>to login as student <br>
+        <a href="./login.php" id="login">click here</a>to login as Admin
+    </main>
+  
+  </div>  
+  </header>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+
+</body>
+</html>
