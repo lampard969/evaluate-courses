@@ -65,10 +65,13 @@ if(isset($_POST['register'])){
     $u_password = $_POST['password'];
   
   include('connection.php');      
-    $hashed_password = password_hash($u_password, PASSWORD_DEFAULT);
-    $insert="INSERT INTO `user` VALUES ('','$u_name','$u_email','$hashed_password')";
+    // $hashed_password = password_hash($u_password, PASSWORD_DEFAULT);
+    $insert="INSERT INTO `user` VALUES ('','$u_name','$u_email','$u_password')";
    
     $run=mysqli_query($conn,$insert);
+    if($run){ 
+        header("Location: login.php");
+    }
 }
 ?>
 

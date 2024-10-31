@@ -47,36 +47,27 @@ session_start();
  include('connection.php');
 
 if(isset($_POST['login'])){
-    $u_name = mysqli_real_escape_string($conn, $_POST['name']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $u_name = $_POST['name'];
+    $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE name='$u_name'";
-    $result = $conn->query  ($sql);
+    $sql = "SELECT * FROM user WHERE name = '$u_name' AND password = '$password'";
+    $result = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($result) > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['name'] = 'name';
+    if ($result) {
+
+    if (mysqli_num_rows($result) > 0) {        
+            $_SESSION['name'] = $u_name;
             header("Location: home.php");
             exit();
         } else {
-            echo "Invalid password.";
+            echo "Invalid user name or password.";
         }
-    } else {
-        echo "No user found.";
-    }
-}
+    } else {        
 
-
-?>
-  <?php
-    $sql = "SELECT * FROM users WHERE name = '$u_name'";
-    $result = $conn->query($sql);
-    
-    if ($result === false) {
         die("Query failed: " . $conn->error); // Display the error message
     }
-    
+}
+  
    ?>
     </div>
     </div>
